@@ -2,12 +2,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 
-@{ var address = @Model.GetAddress();}
-<h1>You added a new contact!</h1>
-<p>@Model.GetFirstName() @Model.GetLastName()</p>
-<p>@address.GetStreet()</p>
-<p>@address.GetCity(), @address.GetState()</p>
-<p>@address.GetZip()</p>
-<p>@Model.GetPhone()</p>
+<div class="container">
+  @{ var address = @Model.GetAddress();}
+  <h1>You added a new contact!</h1>
+  <p>@Model.GetFirstName() @Model.GetLastName()</p>
+  <p>@address.GetStreet()</p>
+  <p>@address.GetCity(), @address.GetState()</p>
+  <p>@address.GetZip()</p>
+  <p>@Model.GetPhone()</p>
 
-<p><a href="/">Back home</a>
+  <p><a href="/">Back home</a>
+</div>
