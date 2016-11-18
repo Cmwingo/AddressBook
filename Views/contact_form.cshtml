@@ -2,17 +2,28 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 
-<h1>Add a Contact</h1>
-<p>Add a contact here:</p>
-<form action="/contact" method="post">
-  <label for="first-name">First name</label>
-  <input id="first-name" name="first-name" type="text">
-  <label for="last-name">Last name</label>
-  <input id="last-name" name="last-name" type="text">
-  <label for="phone">Phone number</label>
-  <input id="phone" name="phone" type="text">
-  <label for="address">Address</label>
-  <input id="address" name="address" type="text">
-  <button type="submit">Add</button>
-</form>
-<p><a href="/">Back home</a>
+<body>
+  <div class="container">
+    <h1>Add a Contact</h1>
+    <form action="/contact" method="post">
+      <div class="form-group">
+        <label for="first-name">First name</label>
+        <input id="first-name" name="first-name" class="form-control" type="text">
+        <label for="last-name">Last name</label>
+        <input id="last-name" name="last-name" class="form-control" type="text">
+        <label for="phone">Phone number</label>
+        <input id="phone" name="phone" class="form-control" type="text">
+        <label for="street">Street</label>
+        <input id="street" name="street" class="form-control" type="text">
+        <label for="city">City</label>
+        <input id="city" name="city" class="form-control" type="text">
+        <label for="state">State</label>
+        <input id="state" name="state" class="form-control" type="text">
+        <label for="zip">Zip</label>
+        <input id="zip" name="zip" class="form-control" type="text">
+      </div>
+      <button type="submit">Add</button>
+    </form>
+    <p><a href="/">Back home</a>
+  </div>
+</body>

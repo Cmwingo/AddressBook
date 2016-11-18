@@ -7,11 +7,11 @@ namespace AddressBook.Objects
     private string _firstName;
     private string _lastName;
     private string _phone;
-    private string _address;
+    private Address _address;
     private int _id;
     private static List<Contact> _instances = new List<Contact>();
 
-    public Contact(string firstName, string lastName, string phone, string address)
+    public Contact(string firstName, string lastName, string phone, Address address)
     {
       _firstName = firstName;
       _lastName = lastName;
@@ -45,11 +45,11 @@ namespace AddressBook.Objects
     {
       _phone = newPhone;
     }
-    public string GetAddress()
+    public Address GetAddress()
     {
       return _address;
     }
-    public void SetAddress(string newAddress)
+    public void SetAddress(Address newAddress)
     {
       _address = newAddress;
     }
@@ -69,5 +69,54 @@ namespace AddressBook.Objects
     {
       return _instances[searchId-1];
     }
+  }
+  public class Address
+  {
+    private string _street;
+    private string _city;
+    private string _state;
+    private string _zip;
+
+    public Address(string street, string city, string state, string zip)
+    {
+      _street = street;
+      _city = city;
+      _state = state;
+      _zip = zip;
+    }
+
+    public string GetStreet()
+    {
+      return _street;
+    }
+    public void SetStreet(string newStreet)
+    {
+      _street = newStreet;
+    }
+    public string GetCity()
+    {
+      return _city;
+    }
+    public void SetCity(string newCity)
+    {
+      _city = newCity;
+    }
+    public string GetState()
+    {
+      return _state;
+    }
+    public void SetState(string newState)
+    {
+      _state = newState;
+    }
+    public string GetZip()
+    {
+      return _zip;
+    }
+    public void SetZip(string newZip)
+    {
+      _zip = newZip;
+    }
+
   }
 }
