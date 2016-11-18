@@ -7,14 +7,24 @@
 {
   <h2>Welcome to the Web-a-dex Address Book</h2>
   <h3>Add a contact to get started</h3>
+  <h3><a href="/contacts/new">Add a new contact</a></h3>
 }
-
-@foreach (var contact in Model)
+else
 {
-  <h3><a href='/contacts/@contact.GetId()'>@contact.GetLastName() @contact.GetFirstName()</a></h3>
-}
+  <form action="/contacts/search" method="post">
+    <div class="form-group">
+      <label for="search">Search Address Book</label>
+      <input id="search" name="search" class="form-control" type="text">
+    </div>
+    <button type="submit">Search</button>
+  </form>
+  @foreach (var contact in Model)
+  {
+    <h3><a href='/contacts/@contact.GetId()'>@contact.GetLastName() @contact.GetFirstName()</a></h3>
+  }
 
-<h3><a href="/contacts/new">Add a new contact</a></h3>
-<form action="/contacts/clear" method="post">
-  <button class="button btn-danger" type="submit">Clear All Contacts</button>
-</form>
+  <h3><a href="/contacts/new">Add a new contact</a></h3>
+  <form action="/contacts/clear" method="post">
+    <button class="button btn-danger" type="submit">Clear All Contacts</button>
+  </form>
+}

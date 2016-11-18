@@ -28,6 +28,24 @@ namespace AddressBook
         Contact.ClearAll();
         return View["address_book_clear.cshtml"];
       };
+      Post["/contacts/search"] = _ => {
+        var allContacts = Contact.GetAll();
+        var matchingContacts = new List<Contact>();
+        string searchString = Request.Form["search"];
+        searchString = searchString.ToLower();
+        foreach(var contact in allContacts)
+        {
+          string firstName = contact.GetFirstName();
+          string lastName = contact.GetLastName();
+          lastName = lastName.ToLower();
+          firstName = firstName.ToLower();
+          if(firstName.Contains(searchString) || lastName.Contains(searchString))
+          {
+            matchingContacts.Add(contact);
+          }
+        }
+        return View["search_results.cshtml", matchingContacts];
+      };
     }
   }
 }
